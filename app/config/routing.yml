@@ -1,3 +1,8 @@
+mik_website:
+    resource: "@MIKWebsiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
