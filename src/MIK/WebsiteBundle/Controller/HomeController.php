@@ -4,8 +4,11 @@ namespace MIK\WebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\UserBundle\Controller\SecurityController as BaseController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class HomeController extends Controller
+class HomeController extends BaseController 
 {
     /**
      * @Route("/")
@@ -13,7 +16,6 @@ class HomeController extends Controller
     public function homeAction()
     {
         return $this->render('MIKWebsiteBundle:Home:home.html.twig', array(
-            // ...
         ));
     }
 

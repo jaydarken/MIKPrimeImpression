@@ -1,0 +1,31 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form method="post" action="{{ path("fos_user_security_check") }}"  class="container" id="needs-validation">
+    <h6>LOGIN</h6>
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    <div class="input-group input-margin">
+        <i class="fa fa-user-circle-o input-group-addon" aria-hidden="true"></i>
+        <input name="_username" type="text" class="form-control" id="password" placeholder="Username" required="required">
+    </div>
+    
+    <div class="input-group input-margin">
+        <i class="fa fa-key input-group-addon" aria-hidden="true"></i>
+        <input name="_password" type="password" class="form-control" id="password" placeholder="Password" required="requred">
+    </div>
+
+    <div class="right">
+        <span class="">
+            <a href="{{ path('fos_user_registration_register') }}">Register&nbsp;</a>
+        </span>
+        <button name="submit" type="submit" class="btn btn-primary"> 
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            LOGIN
+        </button>
+    </div>
+</form>
