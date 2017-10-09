@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block fos_user_content %}
+        {% include "@FOSUser/Registration/register_content.html.twig" %}
+    {% endblock fos_user_content %}
+{% endblock body %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/website/registration/css/registration.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        {% if errors %}
+            var str = "";
+            {% for error in errors %}
+                str += "<li>{{error}}</li>";
+            {% endfor %}
+            $('#form-error-message').css("display", "block");
+            $('#form-error-message').html(str);
+        {% endif %}
+    </script>
+{% endblock %}
