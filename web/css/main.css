@@ -6,6 +6,10 @@ body {
     margin-top: 70px;
 }
 
+.mg-top-small {
+    margin-top: 10px;
+}
+
 .input-margin {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -39,3 +43,7 @@ body {
     margin:auto auto !important;
 }
 
+#main-footer {
+    padding: 20px;
+    color: white;
+}
