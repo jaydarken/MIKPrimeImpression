@@ -57,7 +57,19 @@
                 <div class="row">
                     <div id="left-p" class="col-md-3 align-self-start item-container">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <a href="{{ path('fos_user_security_logout') }}">logout</a>
+                        <div class="row paddimize">
+                            <div class="align-self-start col-md-4">
+                                <i class="fa fa-5x fa-user" aria-hidden="true"></i>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <button class="btn">logout</button>
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <p>Username: {{app.user.username}}</p>
+                                <p style="text-overflow:string">Email: {{app.user.email}}</p>
+                                
+                            </div>
+                        </div>
                     {% else %}
                         {{ render(controller(
                             'MIKWebsiteBundle:AllPageSecurity:login'
