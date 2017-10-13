@@ -1,0 +1,15 @@
+RewriteEngine on 
+# Change knkmarket.com to be your main domain. 
+RewriteCond %{HTTP_HOST} ^(www.)?knkmarket.com$ 
+# Change 'web' to be the directory you will use for your main domain. 
+RewriteCond %{REQUEST_URI} !^/web/ 
+# Don't change the following two lines. 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+# Change 'web' to be the directory you will use for your main domain. 
+RewriteRule ^(.*)$ /web/$1 
+# Change knkmarket.com to be your main domain again. 
+# Change 'web' to be the directory you will use for your main domain 
+# followed by / then the main file for your site, index.php, index.html, etc. 
+RewriteCond %{HTTP_HOST} ^(www.)?knkmarket.com$ 
+RewriteRule ^(/)?$ web/index.php [L]
