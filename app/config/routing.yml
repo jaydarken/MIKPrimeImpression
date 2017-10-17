@@ -1,5 +1,5 @@
 mik_website:
-    resource: "@MIKWebsiteBundle/Controller/MaintenanceController.php"
+    resource: "@MIKWebsiteBundle/Controller/"
     type:     annotation
     prefix:   /
 
