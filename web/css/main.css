@@ -2,12 +2,12 @@ body {
     background-color:rgb(240,240,240);
 }
 
-.mg-top {
-    margin-top: 70px;
+.mg-top-small {
+    margin-top: 20px;
 }
 
-.mg-top-small {
-    margin-top: 10px;
+.mg-top {
+    margin-top: 70px;
 }
 
 .input-margin {
@@ -51,3 +51,4 @@ body {
 .paddimize {
     padding: 15px;
 }
+
