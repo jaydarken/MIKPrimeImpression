@@ -15,7 +15,7 @@ class HomeController extends BaseController
      */
     public function homeAction()
     {
-        return $this->render('MIKWebsiteBundle:Maintenance:maintenance.html.twig', array(
+        return $this->render('MIKWebsiteBundle:Home:home.html.twig', array(
         ));
     }
 

@@ -52,3 +52,39 @@ body {
     padding: 15px;
 }
 
+.paddimize-bottom {
+    padding-bottom: 50px;
+}
+
+.paddimize-sides {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.list-group .list-group-item ul {
+    transition: all 0.8;
+    position: absolute;
+    visibility: hidden;
+    left: 100%;
+    top: -2%;
+    width: 100%;
+    z-index: 1;
+}
+
+.list-group .list-group-item:hover > ul{
+    opacity: 1;
+    visibility: visible;
+}
+
+.pop-bottom-message {
+    position: fixed;
+    box-shadow: 1px 1px 10px 0px;
+    border-radius: 10px 10px 10px 10px;
+    right: 10px;
+    bottom: 20px;
+    padding: 10px;
+    background-color:red;
+    color:white;
+    z-index: 1;
+
+}
