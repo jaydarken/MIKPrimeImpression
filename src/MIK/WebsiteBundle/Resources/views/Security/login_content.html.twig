@@ -1,0 +1,45 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container login-container">
+    {% if error %}
+        <div class="bg-danger text-light paddimize">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+    <div class="mg-top-small card d-flex justify-content-center ">
+        
+        <div class="card-header">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            LOGIN
+        </div>
+        <div class="card-body">
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+                <div class="input-group input-margin">
+                    <i class="fa fa-user-circle-o input-group-addon" aria-hidden="true"></i>
+                    <input name="_username" type="text" class="form-control" id="password" placeholder="Username" required="required">
+                </div>
+                
+                <div class="input-group input-margin">
+                    <i class="fa fa-key input-group-addon" aria-hidden="true"></i>
+                    <input name="_password" type="password" class="form-control" id="password" placeholder="Password" required="requred">
+                </div>
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+                <div class="right mg-top-samll">
+                    <button name="submit" type="submit" class="btn btn-primary"> 
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        LOGIN
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
