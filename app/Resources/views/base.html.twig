@@ -8,53 +8,13 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery-ui/jquery-ui.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery-ui/jquery-ui.structure.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery-ui/jquery-ui.theme.min.css') }}">
+        {% include 'bootstrapCSS.html.twig' %}  
+        
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     </head>
     <body>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark navbar-dark">
-            <a class="navbar-brand" href="/">KNK Market</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">
-                            <i class="fa fa-home" aria-hidden="true"></i> Home 
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-th-large" aria-hidden="true"></i>
-                            Product
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-question" aria-hidden="true"></i>
-                            About Us 
-                        </a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        Search
-                    </button>
-                </form>
-            </div>
-        </nav>
-
+        {% include 'navbar.html.twig' %}  
         <div class="mg-top">
             <div class="container item-container-mg-top">
                 <div class="row">
@@ -81,105 +41,8 @@
                             {% endif %}
                         </div>
 
-                        <div class="item-container mg-top-small">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                        Refrigerator/Freezer
-                                    <i class="fa fa-chevron-right right" aria-hidden="true"></i>
+                        {% include 'productSideMenu.html.twig' %}  
 
-                                    <ul class=" list-group">
-                                        <li class="list-group-item">
-                                            Vertical Type
-                                        </li>
-                                        <li class="list-group-item">
-                                            Horizontal Type
-                                        </li>
-                                        <li class="list-group-item">
-                                            Multipurpose
-                                        </li>
-                                        <li class="list-group-item">
-                                            Table
-                                        </li>
-                                        <li class="list-group-item">
-                                            Side Refrigerator
-                                        </li>
-                                        <li class="list-group-item">
-                                            Water Storage Refrigerator
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    Gas Stove, Fyer, Burner
-                                    <i class="fa fa-chevron-right right" aria-hidden="true"></i>
-
-                                    <ul class=" list-group">
-                                        <li class="list-group-item">
-                                            Commercial Gas
-                                        </li>
-                                        <li class="list-group-item">
-                                            Grill/Griddle/Oven
-                                        </li>
-                                        <li class="list-group-item">
-                                            Fyer
-                                        </li>
-                                        <li class="list-group-item">
-                                            Gas Neutralization
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    Sink/Counter
-                                    <i class="fa fa-chevron-right right" aria-hidden="true"></i>
-
-                                    <ul class=" list-group">
-                                        <li class="list-group-item">
-                                            Sink
-                                        </li>
-                                        <li class="list-group-item">
-                                            Counter
-                                        </li>
-                                        <li class="list-group-item">
-                                            Shelf
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    Serving Cart/Moving Cart
-                                    <i class="fa fa-chevron-right right" aria-hidden="true"></i>
-
-                                    <ul class=" list-group">
-                                        <li class="list-group-item">
-                                            Plastic
-                                        </li>
-                                        <li class="list-group-item">
-                                            Wood
-                                        </li>
-                                        <li class="list-group-item">
-                                            Stainless
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    Office
-                                </li>
-                                <li class="list-group-item">
-                                    Security
-                                </li>
-                                <li class="list-group-item">
-                                    Vault
-                                    <i class="fa fa-chevron-right right" aria-hidden="true"></i>
-
-                                    <ul class=" list-group">
-                                        <li class="list-group-item">
-                                            Overflow Safe Deposit Box
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    Construction Material
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                     <div id="right-p" class="col-md-9 align-self-start">
                             <!-- The right side pane -->
@@ -188,34 +51,20 @@
                 </div>
             </div>
         </div>
-        </div>
-    <div class="pop-bottom-message">
-        This website is in alpha version
-        <Br> The construction of this is still ongoing
-    </div>
 
-        <footer class="mg-top bg-dark navbar-light" id="main-footer">
-            <div class="container">
-                <p class="float-right"><a href="#">Back to top</a></p>
-                <div class="row">
-                    <div class="col-md-2 align-self-center">
-                        <img src="{{ asset('img/madeinkorea1.png') }}">
-                    </div>
-                    <div class="col-md-10">
-                        <p>Beside Petron on M.C Briones St. Mandaue</p>
-                        <p>KNK Market, a MIK Prime Impression Company<br>&copy; 2017 MIK Prime Impression, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About Us</a></p> 
-                    </div>
-                </div>
-            </div>
-        </footer>        
+        <div class="pop-bottom-message">
+            This website is in alpha version
+            <Br> The construction of this is still ongoing
+        </div>
+
+        {% include 'footer.html.twig' %}  
+               
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        
+        {% include 'bootstrapJS.html.twig' %}  
 
-        <script src="{{ asset('js/propper.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
