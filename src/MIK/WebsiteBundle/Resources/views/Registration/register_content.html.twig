@@ -1,5 +1,13 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+{% block headerjs %}
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LctEDcUAAAAAJW4uhhiR6tjjN7DLWfRCi1IXriT'
+        });
+      };
+{% endblock %}
+</script>
 <div class="row">
     <div class="border col-md-11 item-container mg-center">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-signin'}}) }}
@@ -33,8 +41,10 @@
                         REGISTER
                     </button>
                 </div>
+                <div id="html_element"></div>
                 <div class="g-recaptcha" data-sitekey="6LctEDcUAAAAAJW4uhhiR6tjjN7DLWfRCi1IXriT"></div>
             {{ form_rest(form) }}
+                
         {{ form_end(form) }}
     </div>
 </div>
