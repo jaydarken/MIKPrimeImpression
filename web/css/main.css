@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(240,240,240);
+    background-color:rgb(235,235,235);
 }
 
 .mg-top-small {
@@ -74,17 +74,16 @@ body {
 .list-group .list-group-item:hover > ul{
     opacity: 1;
     visibility: visible;
+    color: black;
 }
 
-.pop-bottom-message {
-    position: fixed;
-    box-shadow: 1px 1px 10px 0px;
-    border-radius: 10px 10px 10px 10px;
-    right: 10px;
-    bottom: 20px;
-    padding: 10px;
-    background-color:red;
-    color:white;
-    z-index: 1;
+.list-group .list-group-item:hover {
+    cursor: pointer;
+    background-color: rgb(194, 187, 187);
+    color: white;
+}
 
+nav {
+    border-bottom: 1px solid #666;
+    box-shadow: 0px -5px 10px 1px black;
 }
