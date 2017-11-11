@@ -81,6 +81,14 @@ body {
     cursor: pointer;
     background-color: rgb(194, 187, 187);
     color: white;
+
+}
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 nav {
