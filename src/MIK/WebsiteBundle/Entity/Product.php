@@ -3,6 +3,7 @@
 namespace MIK\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -20,6 +21,16 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\Column(name="prodImage", type="string", length=255)
+     *
+     * @Assert\NotBlank(message="Please, upload the product image")
+     * @Assert\Image(
+     * )
+     */
+    private $prodImage;
 
     /**
      * @var string
@@ -103,6 +114,30 @@ class Product
     public function getProdName()
     {
         return $this->prodName;
+    }
+
+    /**
+     * Set prodImage
+     *
+     * @param string $prodName
+     *
+     * @return Product
+     */
+    public function setProdImage($prodImage)
+    {
+        $this->prodImage = $prodImage;
+
+        return $this;
+    }
+
+    /**
+     * Get prodImage
+     *
+     * @return string
+     */
+    public function getProdImage()
+    {
+        return $this->prodImage;
     }
 
     /**

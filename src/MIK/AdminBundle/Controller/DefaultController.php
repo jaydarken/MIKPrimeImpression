@@ -30,7 +30,18 @@ class DefaultController extends Controller
         
         if ($form->isSubmitted() && $form->isValid()) {
             $product = $form->getData();
-    
+            
+            $file = $product->getProdImage();
+
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            
+            $file->move(
+                $this->getParameter('product_image'),
+                $fileName
+            );
+            
+            $product->setProdImage($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
             $em->flush();

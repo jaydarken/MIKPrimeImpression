@@ -10,7 +10,7 @@
     <div class="row">
         {% for product in products %}
             <div class="text-center card-item card col-md-4 col-sm-12 col-12 mg-top-small" >
-                <img class="card-img-top prod-img" src="{{ asset('img/pr3.jpg') }}" alt="Card image cap">
+                <img class="card-img-top prod-img" src="{{ asset('upload/product/img/'~ product.prodImage ~' ') }}" alt="Card image cap">
                 <div class="card-header">
                     {{ product.prodActName | upper }}
                 </div>
