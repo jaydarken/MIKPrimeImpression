@@ -37,7 +37,7 @@ class RegistrationController extends BaseController
             foreach ($error as $err) {
                 $errors[$err->getOrigin()->getConfig()->getName()] = $err->getMessage();
             }
-            if ($form->isValid() && $this->captchaverify($request->get('g-recaptcha-response'))) {
+            if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
