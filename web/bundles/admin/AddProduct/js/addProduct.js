@@ -1,13 +1,13 @@
 $(document).ready(function() {
     var prodType = $('#product_prodType');
+    changeProdType("REFRIGERATOR");
 
-    $('#product').on('change','#product_prodName', function() {
+    function changeProdType(prodName) {
         var valid = true;
         prodType.parent().show();
         prodType.empty(); 
         var newOptions = {};
 
-        var prodName = this.value;
         if (prodName == 'REFRIGERATOR') {
             newOptions = {
                 'Vertical Type' : 'VERTICAL TYPE',
@@ -19,10 +19,10 @@ $(document).ready(function() {
                 'Water Storage Refrigerator' : 'WATER STORAGE REFRIGERATOR'
             };
 
-        } else if (prodName == 'GAS STOVE, FYER, BURNER') {
+        } else if (prodName == 'GAS STOVE, FRYER, BURNER') {
             newOptions = {
                 'Commercial Gas' : 'COMMERCIAL GAS',
-                'Grill/Griddle/Over' : 'GRILL, GRIDDLE, OVER',
+                'Grill/Griddle/Oven' : 'GRILL, GRIDDLE, OVEN',
                 'Fryer' : 'FRYER',
                 'Gas Neutralization' : 'GAS NEUTRALIZATION'
             };
@@ -71,5 +71,10 @@ $(document).ready(function() {
             location.reload();
         }
 
+    }
+
+    $('#product').on('change','#product_prodName', function() {
+        var prodName = this.value;
+        changeProdType(prodName);
     });
 });

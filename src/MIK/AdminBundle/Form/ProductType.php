@@ -14,7 +14,7 @@ class ProductType extends AbstractType
             ->add('prodName', ChoiceType::class, [
                 'choices' => [
                     'Refrigerator/Freezer' => 'REFRIGERATOR',
-                    'Gas Stove, Fyer, Burner' => 'GAS STOVE, FYER, BURNER',
+                    'Gas Stove, Fryer, Burner' => 'GAS STOVE, FRYER, BURNER',
                     'Sink/Counter' => 'SINK, COUNTER',
                     'Serving Cart/Moving Cart' => 'SERVING CART, MOVING CART',
                     'Office' => 'OFFICE',
@@ -25,6 +25,7 @@ class ProductType extends AbstractType
             ])
             ->add('prodActName')
             ->add('prodType', ChoiceType::class, [
+                'required' => 'false', 
                 'choices' => [
                     'Vertical Type' => 'VERTICAL TYPE',
                     'Horizontal Type' => 'HORIZONTAL TYPE',
@@ -46,5 +47,6 @@ class ProductType extends AbstractType
             ])
             ->add('prodImage')
         ;
+        $builder->get('prodType')->resetViewTransformers();
     }
 }
