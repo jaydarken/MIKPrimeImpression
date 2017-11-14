@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Product</title>
+        {% include 'bootstrapCSS.html.twig' %}  
+    </head>
+
+    <body>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Add Product">
+        {{ form_end(form) }}
+        {% include 'bootstrapJS.html.twig' %}  
+        <script src="{{ asset('bundles/admin/AddProduct/js/addProduct.js') }}"></script>
+    </body>
+</html>
