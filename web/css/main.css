@@ -96,3 +96,8 @@ nav {
     border-bottom: 1px solid #666;
     box-shadow: 0px -5px 10px 1px black;
 }
+
+.btn {
+    cursor: pointer;
+}
+                                            
