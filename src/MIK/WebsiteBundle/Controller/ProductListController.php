@@ -33,10 +33,14 @@ class ProductListController extends Controller
 
                 ],
             'Sink/Counter' => [
-
+                    'Sink',
+                    'Counter',
+                    'Shelf'
                 ],
             'Serving Cart/Moving Cart' => [
-
+                    'Plastic',
+                    'Wood',
+                    'Stainless'
                 ],
             'Office' => [
 
@@ -45,6 +49,7 @@ class ProductListController extends Controller
 
                 ],
             'Vault' => [
+                    'Overflow Safe Deposit Box'
 
                 ],
             'Construction Materials' => [
