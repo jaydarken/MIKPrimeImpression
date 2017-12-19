@@ -3,6 +3,7 @@
 {% block title %}KNK Market | Product{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/product.css') }}">
     <link rel="stylesheet" href="{{ asset('/bundles/website/productlist/css/productlist.css') }}">
 {% endblock %}
 
@@ -28,12 +29,67 @@
                         <ul class="product-type-list hide-type-list">
                             <h6>{{ key }}</h6>
                             {% for prod in product %}
-                                    <li>{{ prod }}</li>
+                                    <a href="#"><li>{{ prod }}</li></a>
                             {% endfor %}
                         </ul>
                     {% endif %}
                 </div>
             {% endfor %}
+        </div>
+    </div>
+    <div class="container mg-top-small">
+        <h5 class="row">Featured Prodcut</h5>
+        <div class="row">
+            <div class="text-center card-item card col-md-4 col-sm-12 col-12 mg-top-small" >
+                <img class="card-img-top prod-img" src="{{ asset('img/pr1.jpg') }}" alt="Card image cap">
+                <div class="card-header">
+                    {{ 'Burner 1x2 ring 4x1 ring' | upper }}
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Size: (90x60x80)
+                    <span class="badge badge-primary">Price: ₱18,000.00</span></p>
+                </div>
+                <a href="#" class="add-card-button">
+                    <div class="card-footer">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            Add Cart
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center card-item card col-md-4 col-sm-12 col-12 mg-top-small" >
+                <img class="card-img-top prod-img" src="{{ asset('img/pr2.jpg') }}" alt="Card image cap">
+                <div class="card-header">
+                    {{ 'SS-SWNT2' | upper }}
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Size: (90x60x80)
+                    <span class="badge badge-primary">Price: ₱8,500.00</span></p>
+                </div>
+                <a href="#" class="add-card-button">
+                    <div class="card-footer">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            Add Cart
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center card-item card col-md-4 col-sm-12 col-12 mg-top-small" >
+                <img class="card-img-top prod-img" src="{{ asset('img/pr3.jpg') }}" alt="Card image cap">
+                <div class="card-header">
+                    {{ 'WS-4DF Freezer' | upper }}
+                </div>
+                <div class="card-body">
+                    <p class="card-tex">Size: --- 
+                    <span class="badge badge-primary">Price: ₱90,000.00</span></p>
+                </div>
+                <a href="#" class="add-card-button">
+                    <div class="card-footer">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            Add Cart
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 

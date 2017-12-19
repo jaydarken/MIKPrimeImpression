@@ -1,10 +1,16 @@
 .product-list .product-type-list {
-    transition: height 0.2s ;
+    transition: height 0.3s ;
     position: absolute;
     padding: 5px;
     width: 100%;
     left: 0;
     z-index: 1;
+}
+
+.product-list:hover {
+    cursor: pointer;
+    background-color: #777;
+    color: yellow;
 }
 
 .hide-type-list {
@@ -14,9 +20,20 @@
 
 .show-type-list {
     height: 200px;
-    background-color: #666;
+    background-color: #777;
     clear: both;
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+.show-type-list li {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.show-type-list li:hover {
+    background-color: white;
+    color: black;
 }
